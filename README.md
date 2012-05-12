@@ -17,4 +17,11 @@ and /Backups/Pictures. After running move_files.rb, all unique image files shoul
 /home/USER/Pictures.
 
  	ruby hash_files.rb /home/USER/Backup_Pictures /Backups/Pictures /media/pix > pics.yaml
- 	ruby move_files.rb /home/USER/Pictures pics.yaml
+	ruby move_files.rb /home/USER/Pictures pics.yaml
+
+You can run hash_files.rb with the --delete option to delete duplicates in place. You will
+be prompted which file(s) to keep or provide a directory to move to.  The parent directory
+of files you select will be "prioritized" and automatically selected any time there are other
+duplicate files and one of the files is in a prioritized directory.
+
+	ruby hash_files.rb --delete /home/USER/Pictures

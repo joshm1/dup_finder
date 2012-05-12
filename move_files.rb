@@ -1,6 +1,8 @@
 require 'fileutils'
 require 'yaml'
 
+YAML::ENGINE.yamler = 'syck'
+
 # Returns the basename of the parent directory of a file, after
 # removing excess spaces if the basename
 def parent_dir path
@@ -11,6 +13,7 @@ end
 def process_dups dups, output_paths
 	priorities = {}
 	errors = []
+	puts dups.inspect
 
 	dups.each do |hash, files|
 		# HACK: eliminate newlines in file names, not sure why they were there in the first place

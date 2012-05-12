@@ -1,8 +1,6 @@
 require 'fileutils'
 require 'yaml'
 
-YAML::ENGINE.yamler = 'syck'
-
 # Returns the basename of the parent directory of a file, after
 # removing excess spaces if the basename
 def parent_dir path
